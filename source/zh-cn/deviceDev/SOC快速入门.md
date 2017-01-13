@@ -1,11 +1,9 @@
 title: SOC快速入门
 ---
-# 机智云平台概述
-机智云平台是机智云物联网公司经过多年行业内的耕耘及对物联网行业的深刻理解，而推出的面向个人、企业开发者的一站式智能硬件开发及云服务平台。平台提供了从定义产品、设备端开发调试、应用开发、产测、云端开发、运营管理、数据服务等覆盖智能硬件接入到运营管理全生命周期服务的能力。
+# 项目概述
 
-机智云平台为开发者提供了自助式智能硬件开发工具与开放的云端服务。通过傻瓜化的自助工具、完善的SDK与API服务能力最大限度降低了物联网硬件开发的技术门槛，降低开发者的研发成本，提升开发者的产品投产速度，帮助开发者进行硬件智能化升级，更好的连接、服务最终消费者。
+智能灯，是一个简单常见的智能产品，硬件电路简单，程序本身也不复杂；下面我们使用gokit3（s）开发板和机智云云端，实现如何将一个传统的灯泡，低成本改造成可以远控开关的智能灯。
 
-**下面我们使用GoKit3（S）开发板，基于esp8266模块上的SoC方案，开发的智能灯项目为例，示范一下如何将设备快速接入机智云，实现硬件智能化。**
 
 ## 1.准备工作 
 
@@ -111,7 +109,6 @@ App通过云端下发控制事件处理，可以在
 **“微信宠物屋 for GoKit3(S) ESP8266 V03000003”**这个是机智云工程师使用GoKit3（S）板，基于esp8266硬件平台写的案例，案例里面包含了红外传感器，温湿度传感器，小电机，RGB灯，用户按键等几个外设的驱动，可以直接复制到任何一个GoKit3（S）的板子上使用，也可以移植至其他的8266板子上去使用，获取源码方式如下图：
 
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410520403.png)
-
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410527525.png)
 
 
@@ -163,11 +160,9 @@ App通过云端下发控制事件处理，可以在
 
 用于reset wifi和使模块进入产测模式
 - reset wifi -> 长按key1
-
-![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410609968.png)
+ ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410609968.png)
 
 - 进入产测模式 -> 短按key1
-
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410698977.png)
 
 
@@ -175,11 +170,9 @@ App通过云端下发控制事件处理，可以在
 
 用于触发模块进入airlink和softap的配置模式
 - airlink配置模式 -> 长按key1
-
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410739993.png)
 
 - softap配置模式 -> 短按key1
-
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410747091.png)
 
 
@@ -195,11 +188,9 @@ App通过云端下发控制事件处理，可以在
 @
 
 - 添加**“#include "driver/hal_rgb_led.h"”**头文件
-
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410801710.png)
 
 - 在**“user_main（）”**函数里添加rgb灯的驱动函数
-
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410831716.png)
 
 然后在**“gizwits_product.c”**文件里面添加以下头文件
@@ -215,11 +206,9 @@ App通过云端下发控制事件处理，可以在
 @
 
 -  添加**“#include "driver/hal_rgb_led.h"”**头文件
-
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410953054.png)
 
 - 在**“gizwitsEventProcess（）”**函数添加灯的开关事件
-
 ![Alt text](/assets/zh-cn/deviceDev/UseSoc/1483410973316.png)
 
 完成以上动作之后，进行SoC编译开发环境的搭建，请参考 >> 第6）点
